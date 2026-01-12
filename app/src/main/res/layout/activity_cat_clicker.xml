@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="cat"
+            type="com.keikuethas.registercats.Cat" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".CatClickerActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:paddingBottom="50dp">
+
+            <TextView
+                android:id="@+id/nameText"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@{cat.name}"
+                android:textSize="15pt" />
+            <EditText
+                android:id="@+id/nameEditText"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:textSize="15pt"
+                android:text="@{cat.name}"
+                android:visibility="gone"/>
+            <Button
+                android:id="@+id/renameButton"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="Rename"
+                android:textSize="5pt"
+                android:layout_marginStart="20dp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/catImage"
+            android:layout_width="250dp"
+            android:layout_height="250dp" />
+
+        <TextView
+            android:id="@+id/counter"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="@{String.valueOf(cat.clicks)}"
+            android:textSize="10pt"
+            android:layout_marginTop="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Favourite food:"
+                android:textSize="10pt"/>
+
+            <EditText
+                android:id="@+id/foodText"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="@{cat.favouriteFood}"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tail length:"
+                android:textSize="10pt"/>
+
+            <EditText
+                android:id="@+id/tailText"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(cat.tailLength)}"
+                android:inputType="number"/>
+
+        </LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/returnButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save and exit"
+            android:layout_marginTop="30dp"/>
+    </LinearLayout>
+</layout>
